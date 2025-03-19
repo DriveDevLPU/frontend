@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Encrypted Warfare</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#2C2A25]">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-links">
+                    <a href="about.html" class="nav-item">About Us</a>
+                    <a href="event.html" class="nav-item">Event</a>
+                    <a href="sponsors.html" class="nav-item">Sponsors</a>
+                </div>
+
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html" class="mobile-nav-item">About Us</a>
+            <a href="event.html" class="mobile-nav-item">Event</a>
+            <a href="sponsors.html" class="mobile-nav-item">Sponsors</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- Event Hero Section -->
+    <section class="relative min-h-screen pt-48 md:pt-52 pb-20 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[url('/images/vintage-paper.jpg')] bg-cover bg-center opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#2C2A25]/50 via-transparent to-[#2C2A25]/50"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider
+                           drop-shadow-[0_0_15px_rgba(139,0,0,0.5)] mb-6">
+                    OPERATION BRIEFING
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto"></div>
+            </div>
+
+            <!-- Mission Details Box -->
+            <div class="mission-card fade-in mb-40">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-shield-alt text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">MISSION DETAILS</h2>
+                    </div>
+                    <div class="box-body">
+                        <div class="mission-points">
+                            <p class="text-[#FFFFFF]">
+                                In the heart of a national digital battlefield, strategists from universities across the
+                                country gather, minds sharpened like blades. Each line of code becomes a
+                                potential weapon, every puzzle a fortified stronghold. Amidst the rapid echo of
+                                keystrokes and the electric buzz of anticipation, alliances form, rivals emerge,
+                                and the race for cyber dominance begins.
+                            </p>
+                            
+                            <p class="text-[#e8c517] text-center font-['Black_Ops_One'] text-xl glow-highlight">
+                                This is no ordinary competition—it's a test of intellect, skill, and resilience.
+                            </p>
+                            
+                            <p class="text-[#FFFFFF]">
+                                Tactics evolve on the fly as players navigate encrypted mazes, defuse logic
+                                bombs, and breach sophisticated firewalls, all within the high-stakes pressure of this
+                                24-hour World War-themed Capture the Flag (CTF). The battlefield stretches far
+                                and wide—every flag captured a hard-earned victory, every exploit uncovered a
+                                step closer to total domination.
+                            </p>
+                            
+                            <p class="text-[#FFFFFF]">
+                                As the hours tick away, adversaries push the limits of their knowledge, attacking
+                                vulnerabilities with precision and defending their ground with unwavering
+                                resolve. In this relentless pursuit of mastery, no move is trivial, and every
+                                second counts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+                </div>
+            </div>
+
+            <!-- Event Schedule Section -->
+            <div class="relative z-10 max-w-6xl mx-auto px-6">
+                <!-- Section Title -->
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-6xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider
+                               drop-shadow-[0_0_15px_rgba(139,0,0,0.5)] mb-8">
+                        OPERATION TIMELINE
+                    </h2>
+                    <div class="w-40 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto"></div>
+                </div>
+
+                <!-- Day 1 Schedule Box -->
+                <div class="mission-card fade-in mb-16">
+                    <div class="box-content">
+                        <div class="box-header">
+                            <i class="fas fa-sun text-[#FFD700] text-3xl"></i>
+                            <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">
+                                Strategic Warfare<br>Conference
+                            </h2>
+                        </div>
+                        <div class="box-body">
+                            <div class="max-w-4xl mx-auto">
+                                <p class="text-[#FFFFFF] leading-relaxed mb-6">
+                                    Join us for an engaging and insightful Strategic Warfare
+                                    Conference, where industry experts will dive into the realms of
+                                    cybersecurity, ethical hacking, and digital warfare. Explore real-
+                                    world strategies, evolving cyber threats, and defense
+                                    mechanisms essential in today's digital age. The conference will
+                                    feature keynote sessions on cyber defense tactics, deep dives
+                                    into ethical hacking, and discussions on the art of digital
+                                    warfare. Gear up, strategize, and get ready for the ultimate
+                                    cyber battle!
+                                </p>
+                                
+                                <!-- Location and Date Info -->
+                                <div class="flex items-center justify-between mt-4 border-t border-[#FFD700]/20 pt-6">
+                                    <!-- Location -->
+                                    <div class="flex items-center">
+                                        <i class="fas fa-location-dot text-[#FFD700] text-2xl mr-4"></i>
+                                        <p class="text-[#FFFFFF]">
+                                            Lovely Professional University<br>
+                                            Jalandhar, Punjab
+                                        </p>
+                                    </div>
+                                    
+                                    <!-- Date -->
+                                    <div class="flex items-center gap-1">
+                                        <i class="fas fa-calendar text-[#FFD700] text-2xl -mt-[2px]"></i>
+                                        <p class="text-[#FFFFFF] ml-[2px]">
+                                            March 26, 2024
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration top-right"></div>
+                        <div class="corner-decoration bottom-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 Schedule Box -->
+                <div class="mission-card fade-in" style="animation-delay: 0.3s;">
+                    <div class="box-content">
+                        <div class="box-header">
+                            <i class="fas fa-flag text-[#FFD700] text-3xl"></i>
+                            <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">
+                                24-Hour World<br>War-Themed CTF
+                            </h2>
+                        </div>
+                        <div class="box-body">
+                            <div class="max-w-4xl mx-auto">
+                                <p class="text-[#FFFFFF] leading-relaxed mb-6">
+                                    Prepare for an all-out cyber battle in our 24-hour World War-
+                                    themed Capture the Flag (CTF), where strategy, skill, and speed
+                                    are your ultimate weapons. Inspired by historic war tactics, this
+                                    CTF plunges participants into a digital battlefield filled with
+                                    complex puzzles, encrypted codes, and high-stakes challenges.
+                                    Navigate through warzones of cryptography, forensics, reverse
+                                    engineering, and web exploitation, all while racing against time
+                                    and rival teams.
+                                </p>
+                                <p class="text-[#FFFFFF] leading-relaxed mb-6">
+                                    Every flag captured brings you closer to victory—but hidden
+                                    traps and mind-bending twists await those who let their guard
+                                    down. Assemble your team, plan your attack, and outwit your
+                                    opponents in this relentless cyber warfare
+                                </p>
+                                
+                                <!-- Location and Date Info -->
+                                <div class="flex items-center justify-between mt-4 border-t border-[#FFD700]/20 pt-6">
+                                    <!-- Location -->
+                                    <div class="flex items-center">
+                                        <i class="fas fa-location-dot text-[#FFD700] text-2xl mr-4"></i>
+                                        <p class="text-[#FFFFFF]">
+                                            Lovely Professional University<br>
+                                            Jalandhar, Punjab
+                                        </p>
+                                    </div>
+                                    
+                                    <!-- Date -->
+                                    <div class="flex items-center gap-1">
+                                        <i class="fas fa-calendar text-[#FFD700] text-2xl -mt-[2px]"></i>
+                                        <p class="text-[#FFFFFF] ml-[2px]">
+                                            March 27 - 28, 2024
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration top-right"></div>
+                        <div class="corner-decoration bottom-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#FFD700]/30"></div>
+        <div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-[#FFD700]/30"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#FFD700]/30"></div>
+        <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#FFD700]/30"></div>
+    </section>
+</body>
+</html> 

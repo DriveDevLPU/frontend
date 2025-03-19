@@ -1,0 +1,1804 @@
+@import "tailwindcss";
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    3% { opacity: 0.8; }
+    6% { opacity: 0.9; }
+    7% { opacity: 0.8; }
+    8% { opacity: 0.9; }
+    9% { opacity: 0.8; }
+    10% { opacity: 1; }
+    89% { opacity: 1; }
+    90% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes burn {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    50% { transform: scale(1.1) rotate(3deg); opacity: 0.8; }
+}
+
+@keyframes burn-slow {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.2) rotate(-3deg); opacity: 0.7; }
+}
+
+@keyframes glitch {
+    2%, 64% { transform: translate(2px, 0); }
+    4%, 60% { transform: translate(-2px, 0); }
+    62% { transform: translate(0, 0); }
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(96px, 9999px, 2px, 0); }
+    20% { clip: rect(66px, 9999px, 78px, 0); }
+    40% { clip: rect(24px, 9999px, 16px, 0); }
+    60% { clip: rect(32px, 9999px, 84px, 0); }
+    80% { clip: rect(15px, 9999px, 95px, 0); }
+    100% { clip: rect(53px, 9999px, 27px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(32px, 9999px, 91px, 0); }
+    20% { clip: rect(87px, 9999px, 14px, 0); }
+    40% { clip: rect(65px, 9999px, 34px, 0); }
+    60% { clip: rect(23px, 9999px, 76px, 0); }
+    80% { clip: rect(82px, 9999px, 48px, 0); }
+    100% { clip: rect(12px, 9999px, 58px, 0); }
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-40px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes smoke-slow {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.3);
+        opacity: 0.15;
+    }
+    100% {
+        transform: translateY(-60px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes bullet-impact {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+@layer utilities {
+    .animation-delay-500 {
+        animation-delay: 500ms;
+    }
+
+    .animate-flicker {
+        animation: flicker 5s linear infinite;
+    }
+
+    .animate-burn {
+        animation: burn 4s ease-in-out infinite;
+    }
+
+    .animate-burn-slow {
+        animation: burn-slow 6s ease-in-out infinite;
+    }
+
+    .animate-smoke {
+        animation: smoke 4s infinite ease-out;
+    }
+    
+    .animate-smoke-slow {
+        animation: smoke-slow 6s infinite ease-out;
+    }
+    
+    .animate-bullet-impact {
+        animation: bullet-impact 2s infinite;
+    }
+    
+    .animate-bullet-impact-delayed {
+        animation: bullet-impact 2s infinite 1s;
+    }
+    
+    .scale-25 {
+        transform: scale(0.25);
+    }
+}
+
+.font-special-elite {
+    font-family: 'Special Elite', cursive;
+}
+
+/* Glitch Effect */
+.glitch-text {
+    position: relative;
+    animation: glitch 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 #8B0000;
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: 2px 0 #FFD700;
+    animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+/* Add these custom styles */
+.bullet-holes div {
+    pointer-events: none;
+}
+
+/* Enhanced shadow for bullet holes */
+.shadow-inner {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6),
+                inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Binary animation variations */
+.binary-digit:nth-child(3n) {
+    animation-delay: 0.5s;
+}
+
+.binary-digit:nth-child(3n+1) {
+    animation-delay: 1s;
+}
+
+.binary-digit:nth-child(3n+2) {
+    animation-delay: 1.5s;
+}
+
+.binary-column:hover .binary-digit {
+    color: #FFA500;
+    text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Section Transitions */
+.section-transition {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(5px);
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Transition variations for different elements within sections */
+.section-visible .pixel-text {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.section-visible .pixel-text:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.section-visible button {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+    opacity: 0;
+}
+
+.section-visible .contact-grid {
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+    opacity: 0;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth scroll behavior for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page transition overlay */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2C2A25, #403D38);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Add transition effects to navigation links */
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Section divider animation */
+.section-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    transform: scaleX(0);
+    transition: transform 1s ease;
+}
+
+.section-visible .section-divider {
+    transform: scaleX(1);
+}
+
+/* Navigation Styles */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    opacity: 0;
+}
+
+.nav-link:hover .nav-indicator {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Mobile Navigation */
+.mobile-nav-link {
+    @apply flex items-center justify-center text-[#FFD700] hover:text-[#FFA500] 
+           px-3 py-4 text-sm uppercase tracking-widest font-bold
+           border-b border-[#FFD700]/10 transition-all duration-300
+           hover:bg-[#FFD700]/5;
+}
+
+/* Add hover effect for icons */
+.nav-link:hover i {
+    animation: iconPulse 0.5s ease;
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Active state for navigation */
+.nav-link.active .nav-indicator {
+    width: 100%;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nav-link.active i {
+    color: #FFA500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Pixelated Text Effect */
+.pixel-text {
+    text-shadow: 
+        2px 2px 0px #8B0000,
+        4px 4px 0px rgba(139, 0, 0, 0.5);
+    animation: textGlitch 3s infinite;
+}
+
+.pixelate-effect {
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.1) 0px,
+        rgba(255, 215, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    mix-blend-mode: overlay;
+    animation: pixelate 2s steps(20) infinite;
+}
+
+@keyframes pixelate {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes textGlitch {
+    0%, 100% {
+        transform: translateX(0) skewX(0);
+        filter: brightness(1);
+    }
+    2% {
+        transform: translateX(-2px) skewX(3deg);
+        filter: brightness(1.1);
+    }
+    4% {
+        transform: translateX(2px) skewX(-3deg);
+        filter: brightness(0.9);
+    }
+    6% {
+        transform: translateX(0) skewX(0);
+        filter: brightness(1);
+    }
+    60% {
+        transform: translateX(0) skewX(0);
+        filter: brightness(1);
+    }
+    62% {
+        transform: translateX(3px);
+        filter: brightness(1.2);
+    }
+    64% {
+        transform: translateX(-3px);
+        filter: brightness(0.8);
+    }
+    66% {
+        transform: translateX(0);
+        filter: brightness(1);
+    }
+}
+
+/* Scanline effect */
+.pixel-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 215, 0, 0.1) 0px,
+        rgba(255, 215, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* CRT flicker */
+.pixel-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    filter: blur(1px);
+    animation: crtFlicker 0.1s infinite;
+}
+
+@keyframes crtFlicker {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Adjust font size for better readability */
+@media (max-width: 768px) {
+    .pixel-text {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(44, 42, 37, 0.95);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    height: 160px; /* Match the nav-content height */
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px; /* Increased height for larger logo */
+}
+
+.logo {
+    height: 120px; /* Large logo size */
+    width: auto;
+    transition: opacity 0.3s ease;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Reduced from 4rem to match smaller font size */
+}
+
+.nav-item {
+    color: #D4AF37;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.2s ease;
+    padding: 0.5rem 0;
+}
+
+/* Remove previous hover effects */
+.nav-item::before,
+.nav-item::after {
+    display: none;
+}
+
+/* New simple popup hover effect */
+.nav-item:hover {
+    color: #FFD700;
+    transform: translateY(-4px);
+    text-shadow: 0 4px 8px rgba(218, 165, 32, 0.3);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+    display: none;
+    color: rgba(255, 215, 0, 0.9);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    background-color: rgba(44, 42, 37, 0.95);
+    backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.mobile-nav-item {
+    color: #D4AF37;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav-item:hover {
+    color: #FFD700;
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(218, 165, 32, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .nav-content {
+        height: 120px;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .navbar {
+        height: 120px;
+    }
+}
+
+/* Mission Card Styling */
+.mission-card {
+    position: relative;
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mission-card:hover .corner-decoration {
+    opacity: 0.6;
+    width: 50px;
+    height: 50px;
+}
+
+.mission-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+.mission-card p, 
+.stats-card p,
+.box-body p {
+    color: #F5F5F5;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-card {
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 2rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+/* Text highlight effect */
+.highlight {
+    color: #FFE55C;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 229, 92, 0.4);
+}
+
+/* Section transitions */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional Mission Card Styles */
+.mission-card ul,
+.mission-card li span {
+    color: #F5F5F5;
+}
+
+.mission-card li {
+    transition: transform 0.2s ease;
+}
+
+.mission-card li:hover {
+    color: #FFE55C;
+    transform: translateX(5px);
+}
+
+/* Stats Card Enhancement */
+.stats-card {
+    position: relative;
+}
+
+.stats-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #FFD700, transparent);
+}
+
+/* Staggered Animation */
+.fade-in:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Update the quote section */
+.stats-card .italic {
+    color: #E6D5A7;
+}
+
+/* Update the JOIN THE MISSION section */
+.stats-card .border-t {
+    border-color: rgba(255, 200, 87, 0.2);
+}
+
+/* Vision and Mission Boxes Styling */
+.vision-mission-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; /* Increased gap between boxes */
+    padding: 0 2rem;
+    margin-top: 4rem; /* Add more space from top content */
+}
+
+.vision-box,
+.mission-box {
+    position: relative;
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 2.5rem; /* Unified padding */
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Content Container */
+.box-content {
+    position: relative;
+    z-index: 1;
+    padding: 1rem; /* Add internal padding */
+}
+
+/* Header Styling */
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.box-header i {
+    font-size: 2.25rem;
+    color: #FFE55C;
+    flex-shrink: 0;
+}
+
+.box-header h3 {
+    color: #FFE55C;
+    text-shadow: 0 0 10px rgba(255, 229, 92, 0.3);
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+/* Body Text Styling */
+.box-body {
+    padding: 0 1rem; /* Add horizontal padding */
+}
+
+.box-body p {
+    color: #F5F5F5;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0; /* Remove default margins */
+    padding-left: 3rem; /* Align with header text */
+}
+
+/* Corner Decorations */
+.corner-decoration {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FFD700;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.top-left {
+    top: 15px;
+    left: 15px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: 15px;
+    right: 15px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: 15px;
+    left: 15px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Hover Effects */
+.vision-box:hover,
+.mission-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vision-box:hover .corner-decoration,
+.mission-box:hover .corner-decoration {
+    opacity: 0.6;
+    width: 50px; /* Larger expansion on hover */
+    height: 50px;
+}
+
+/* Glowing effect on hover */
+.vision-box::after,
+.mission-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 4px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.1), 
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vision-box:hover::after,
+.mission-box:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vision-mission-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .box-body p {
+        padding-left: 1rem;
+    }
+
+    .box-header {
+        gap: 1rem;
+    }
+
+    .box-header i {
+        font-size: 2rem;
+    }
+
+    .box-header h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Updated Website Button Styles */
+.website-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: rgba(44, 42, 37, 0.9);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 1rem;
+}
+
+/* Button Border Effect */
+.website-btn::before,
+.website-btn::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border: 2px solid #FFD700;
+    transition: all 0.3s ease;
+    animation: borderPulse 2s infinite;
+}
+
+.website-btn::before {
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.website-btn::after {
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Button Content Styling */
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: #FFD700;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-content i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.website-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(44, 42, 37, 0.95);
+}
+
+.website-btn:hover::before {
+    transform: translate(3px, 3px);
+}
+
+.website-btn:hover::after {
+    transform: translate(-3px, -3px);
+}
+
+.website-btn:hover .btn-content {
+    color: #FFF;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.website-btn:hover .btn-content i {
+    transform: rotate(180deg);
+}
+
+/* Border Animation */
+@keyframes borderPulse {
+    0%, 100% {
+        border-color: rgba(255, 215, 0, 0.6);
+    }
+    50% {
+        border-color: rgba(255, 215, 0, 1);
+    }
+}
+
+/* Active State */
+.website-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .website-btn {
+        padding: 0.8rem 2rem;
+    }
+    
+    .btn-content {
+        font-size: 1rem;
+    }
+}
+
+/* Update the padding-top for the hero section */
+.relative.min-h-screen {
+    padding-top: 12rem; /* Increased from 10rem (pt-40) */
+}
+
+/* Add margin to the section title */
+.text-center.mb-16 {
+    margin-top: 2rem;
+}
+
+/* Ensure navbar height is accounted for */
+.navbar {
+    height: 160px; /* Match the nav-content height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .relative.min-h-screen {
+        padding-top: 10rem;
+    }
+
+    .text-center.mb-16 {
+        margin-top: 1rem;
+    }
+
+    .navbar {
+        height: 120px;
+    }
+}
+
+/* Vision Points Styling */
+.vision-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.vision-points p {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.vision-points p::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+/* Update box-body padding for vision box */
+.vision-box .box-body {
+    padding: 0.5rem 1rem;
+}
+
+.vision-box .box-body p {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Mission Points Styling */
+.mission-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mission-points p {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.mission-points p::before {
+    content: '▹'; /* Changed from ⚡ to match vision points */
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.2rem; /* Match vision points font size */
+}
+
+/* Update box-body padding for mission box */
+.mission-box .box-body {
+    padding: 0.5rem 1rem;
+}
+
+.mission-box .box-body p {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Ensure consistent styling between vision and mission points */
+.vision-points p::before,
+.mission-points p::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+/* Social Icons Styling */
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    color: #FFD700;
+    font-size: 1.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 215, 0, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+/* Hover Effects */
+.social-icon-link:hover {
+    transform: translateY(-5px);
+    color: #FFF;
+    border-color: #FFF;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.social-icon-link:hover::before {
+    left: 100%;
+}
+
+.social-icon-link i {
+    transition: transform 0.3s ease;
+}
+
+.social-icon-link:hover i {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-icon-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex.justify-center.items-center.gap-12 {
+        gap: 1.5rem;
+    }
+    
+    .social-icon-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+    }
+}
+
+/* Grid Overlay */
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+}
+
+/* Event Overview Card */
+.event-overview-card {
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #FFD700, transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.time-marker {
+    width: 150px;
+    text-align: right;
+    padding-right: 2rem;
+    position: relative;
+}
+
+.time {
+    color: #FFD700;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1rem;
+}
+
+.marker {
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #2C2A25;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item .content {
+    flex: 1;
+    padding-left: 2rem;
+    max-width: 600px;
+}
+
+/* Registration Card */
+.registration-card {
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 3rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.register-btn {
+    background: rgba(44, 42, 37, 0.9);
+    padding: 1rem 2.5rem;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+.register-btn .btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 215, 0, 0.5);
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .time-marker {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .marker {
+        left: 11px;
+        right: auto;
+    }
+
+    .timeline-item .content {
+        padding-left: 50px;
+    }
+}
+
+/* Mission Brief Styling */
+.mission-brief {
+    position: relative;
+    padding: 2rem;
+}
+
+.brief-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.mission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mission-list li {
+    color: #F5F5F5;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.mission-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Card hover effect */
+.event-overview-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+/* Text highlight effect */
+.text-highlight {
+    color: #FFE55C;
+    text-shadow: 0 0 8px rgba(255, 229, 92, 0.4);
+}
+
+/* Warfare Manifesto Styling */
+.warfare-manifesto {
+    background: rgba(44, 42, 37, 0.97);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 3rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+}
+
+.warfare-manifesto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+.manifesto-content {
+    position: relative;
+    padding: 2rem;
+}
+
+.manifesto-text {
+    color: #E5E5E5;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-family: 'Black Ops One', cursive;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+    color: #FFD700;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.quote-marks {
+    position: absolute;
+    font-size: 4rem;
+    color: rgba(255, 215, 0, 0.2);
+    line-height: 1;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* Hover effect */
+.warfare-manifesto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.warfare-manifesto:hover .quote-marks {
+    color: rgba(255, 215, 0, 0.3);
+    transition: color 0.3s ease;
+}
+
+/* Animation for text appearance */
+.manifesto-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.manifesto-text:nth-child(1) { animation-delay: 0.2s; }
+.manifesto-text:nth-child(2) { animation-delay: 0.4s; }
+.manifesto-text:nth-child(3) { animation-delay: 0.6s; }
+.manifesto-text:nth-child(4) { animation-delay: 0.8s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .warfare-manifesto {
+        padding: 2rem;
+    }
+    
+    .manifesto-content {
+        padding: 1rem;
+    }
+    
+    .manifesto-text {
+        font-size: 1rem;
+    }
+    
+    .highlight-text {
+        font-size: 1.15rem;
+    }
+    
+    .quote-marks {
+        font-size: 3rem;
+    }
+}
+
+/* Event Box Styling */
+.event-box {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.event-box-inner {
+    background: rgba(34, 32, 27, 0.98);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 3rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
+}
+
+.event-box-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.event-text-container {
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-text {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+}
+
+.event-text.highlight {
+    color: #FFE55C;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-family: 'Black Ops One', cursive;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(255, 229, 92, 0.6),
+                 0 0 40px rgba(255, 229, 92, 0.4);
+    font-weight: 700;
+}
+
+/* Corner Effects */
+.corner-effect {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FFD700;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Hover Effects */
+.event-box:hover .corner-effect {
+    width: 70px;
+    height: 70px;
+    opacity: 0.6;
+}
+
+.event-box:hover {
+    transform: translateY(-5px);
+}
+
+.event-box-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.event-box:hover .event-box-inner::after {
+    opacity: 1;
+}
+
+/* Staggered text animation */
+.event-text:nth-child(1) { animation-delay: 0.2s; }
+.event-text:nth-child(2) { animation-delay: 0.4s; }
+.event-text:nth-child(3) { animation-delay: 0.6s; }
+.event-text:nth-child(4) { animation-delay: 0.8s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-box-inner {
+        padding: 2rem;
+    }
+    
+    .event-text-container {
+        padding: 0.5rem;
+    }
+    
+    .event-text {
+        font-size: 1rem;
+    }
+    
+    .event-text.highlight {
+        font-size: 1.2rem;
+    }
+    
+    .corner-effect {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .event-box:hover .corner-effect {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Add golden glow highlight effect */
+.glow-highlight {
+    color: #FFE55C;
+    text-shadow: 0 0 10px rgba(255, 229, 92, 0.8),
+                 0 0 20px rgba(255, 229, 92, 0.4),
+                 0 0 30px rgba(255, 215, 0, 0.3);
+    font-weight: 700;
+    padding: 2rem 0;
+    position: relative;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 229, 92, 0.8),
+                     0 0 20px rgba(255, 229, 92, 0.4),
+                     0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 229, 92, 0.9),
+                     0 0 25px rgba(255, 229, 92, 0.5),
+                     0 0 35px rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* Enhanced Highlight Item Styling */
+.highlight-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: fadeInRight 0.8s ease forwards;
+    opacity: 0;
+    background: rgba(44, 42, 37, 0.3);
+    border-radius: 8px;
+}
+
+.highlight-item:hover {
+    transform: translateX(10px);
+    background: rgba(44, 42, 37, 0.5);
+}
+
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover .hover-glow {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4),
+                 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Update existing highlight list styles */
+.highlights-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .highlight-item span {
+        font-size: 1.5rem;
+    }
+    
+    .highlight-item {
+        padding: 1rem;
+    }
+}
+
+/* Schedule Styling */
+.schedule-container {
+    padding: 1rem 0;
+}
+
+.schedule-day {
+    position: relative;
+}
+
+.schedule-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.time-block {
+    flex: 0 0 120px;
+    padding-right: 1.5rem;
+    position: relative;
+}
+
+.time-block::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FFD700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.time {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #FFD700;
+    font-size: 1.1rem;
+}
+
+.event-block {
+    flex: 1;
+    padding-left: 1.5rem;
+    border-left: 2px dashed rgba(255, 215, 0, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.schedule-item:last-child .event-block {
+    border-left-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .schedule-item {
+        flex-direction: column;
+    }
+    
+    .time-block {
+        flex: 0 0 auto;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .time-block::after {
+        top: auto;
+        bottom: -6px;
+        right: auto;
+        left: 0;
+    }
+    
+    .event-block {
+        flex: 1;
+        padding-left: 1.5rem;
+        border-left: 2px dashed rgba(255, 215, 0, 0.3);
+        margin-left: 6px;
+    }
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted Warfare</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createBinaryBackground();
+            // Smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const section = document.querySelector(this.getAttribute('href'));
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+
+            // Intersection Observer for section animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('section-hidden');
+                observer.observe(section);
+            });
+        });
+
+        function createBinaryBackground() {
+            const container = document.createElement('div');
+            container.className = 'binary-background';
+            document.body.appendChild(container);
+
+            // Create multiple columns of binary
+            for (let i = 0; i < 30; i++) {
+                const column = document.createElement('div');
+                column.className = 'binary-column';
+                column.style.left = `${(i * 3.5)}%`;
+                column.style.animationDelay = `${Math.random() * 8}s`;
+                
+                // Add initial binary numbers to each column
+                for (let j = 0; j < 25; j++) {
+                    const binary = document.createElement('span');
+                    binary.className = 'binary-digit';
+                    binary.textContent = Math.random() > 0.5 ? '1' : '0';
+                    binary.style.animationDelay = `${Math.random() * 5}s`;
+                    column.appendChild(binary);
+                }
+                
+                container.appendChild(column);
+            }
+        }
+    </script>
+    <style>
+        .binary-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .binary-column {
+            position: absolute;
+            top: -20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            animation: columnFall 20s linear infinite;
+            opacity: 0.2;
+        }
+
+        .binary-digit {
+            color: #FFD700;
+            font-family: monospace;
+            font-size: 14px;
+            animation: glowPulse 2s ease-in-out infinite;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes columnFall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.3;
+                text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        /* Column variations */
+        .binary-column:nth-child(3n) {
+            animation-duration: 15s;
+        }
+
+        .binary-column:nth-child(3n+1) {
+            animation-duration: 25s;
+        }
+
+        .binary-column:nth-child(3n+2) {
+            animation-duration: 20s;
+        }
+
+        .binary-column:nth-child(2n) .binary-digit {
+            font-size: 12px;
+        }
+
+        .binary-column:nth-child(3n) .binary-digit {
+            font-size: 16px;
+        }
+
+        /* Ensure other content stays above the background */
+        .nav, .hero-section, .contact-section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#2C2A25]">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Logo" class="logo">
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="./about.html" class="nav-item">About Us</a>
+                    <a href="./event.html" class="nav-item">Event</a>
+                    <a href="./sponsors.html" class="nav-item">Sponsors</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="./about.html" class="mobile-nav-item">About Us</a>
+            <a href="./event.html" class="mobile-nav-item">Event</a>
+            <a href="./sponsors.html" class="mobile-nav-item">Sponsors</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section-transition relative min-h-screen flex items-center justify-center overflow-hidden pt-52">
+        <!-- Vintage Paper Background with Burn Effects -->
+        <div class="absolute inset-0">
+            <!-- Base Paper Texture -->
+            <div class="absolute inset-0 bg-[url('/images/vintage-paper.jpg')] bg-cover bg-center opacity-90"></div>
+            
+            <!-- Burn Effects -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#2C2A25] rounded-full blur-3xl opacity-90 animate-burn"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-[#2C2A25] rounded-full blur-2xl opacity-80 animate-burn-slow"></div>
+            
+            <!-- Paper Fold Lines -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5"></div>
+
+            <!-- Bullet Holes -->
+            <div class="absolute top-20 left-12 w-6 h-6 rounded-full bg-[#2C2A25] shadow-inner transform -rotate-12"></div>
+            <div class="absolute top-40 right-16 w-4 h-4 rounded-full bg-[#2C2A25] shadow-inner transform rotate-45"></div>
+            <div class="absolute bottom-32 left-24 w-5 h-5 rounded-full bg-[#2C2A25] shadow-inner transform -rotate-6"></div>
+            
+            <!-- Smoke Effects -->
+            <div class="absolute top-20 right-1/4 w-32 h-32 bg-gradient-to-t from-[#8B0000]/10 to-transparent rounded-full blur-xl animate-smoke"></div>
+            <div class="absolute bottom-40 left-1/3 w-40 h-40 bg-gradient-to-t from-[#8B0000]/10 to-transparent rounded-full blur-xl animate-smoke-slow"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <!-- Classification Stamp -->
+            <div class="bullet-holes">
+                <div class="absolute -top-10 -left-10 w-20 h-20">
+                    <div class="relative w-full h-full">
+                        <div class="absolute inset-0 border-4 border-[#2C2A25] rounded-full transform scale-50 animate-bullet-impact"></div>
+                        <div class="absolute inset-0 bg-[#2C2A25] rounded-full transform scale-25"></div>
+                    </div>
+                </div>
+                <div class="absolute top-1/2 -right-8 w-16 h-16">
+                    <div class="relative w-full h-full">
+                        <div class="absolute inset-0 border-4 border-[#2C2A25] rounded-full transform scale-50 animate-bullet-impact-delayed"></div>
+                        <div class="absolute inset-0 bg-[#2C2A25] rounded-full transform scale-25"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Title with Glitch Effect -->
+            <div class="space-y-4 mb-8">
+                <h1 class="pixel-text text-5xl md:text-7xl font-['Press_Start_2P'] text-[#FFD700] 
+                           tracking-wider leading-tight relative z-10"
+                    data-text="ENCRYPTED">
+                    <span class="block relative">
+                        <span class="absolute inset-0 pixelate-effect"></span>
+                        ENCRYPTED
+                    </span>
+                </h1>
+                <h1 class="pixel-text text-5xl md:text-7xl font-['Press_Start_2P'] text-[#FFD700] 
+                           tracking-wider leading-tight relative z-10 animation-delay-500"
+                    data-text="WARFARE">
+                    <span class="block relative">
+                        <span class="absolute inset-0 pixelate-effect"></span>
+                        WARFARE
+                    </span>
+                </h1>
+            </div>
+
+            <!-- Three category buttons with distinct spacing -->
+            <div class="flex justify-center items-center gap-32 mt-16 px-4">
+                <!-- LPU Student Button -->
+                <button class="relative group transform hover:-translate-y-1 transition-all duration-300 mx-2">
+                    <div class="absolute inset-0 bg-[#8B0000] transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300 
+                                shadow-lg group-hover:shadow-[#8B0000]/50 border-2 border-[#8B0000]/30"></div>
+                    <span class="relative px-10 py-4 inline-block font-['Black_Ops_One'] text-lg text-[#FFD700] 
+                                tracking-wider uppercase group-hover:scale-105 transition-transform duration-300
+                                whitespace-nowrap">
+                        LPU Student
+                    </span>
+                </button>
+
+                <!-- Non LPU Student Button -->
+                <button class="relative group transform hover:-translate-y-1 transition-all duration-300 mx-2">
+                    <div class="absolute inset-0 bg-[#8B0000] transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300
+                                shadow-lg group-hover:shadow-[#8B0000]/50 border-2 border-[#8B0000]/30"></div>
+                    <span class="relative px-10 py-4 inline-block font-['Black_Ops_One'] text-lg text-[#FFD700] 
+                                tracking-wider uppercase group-hover:scale-105 transition-transform duration-300
+                                whitespace-nowrap">
+                        Non LPU Student
+                    </span>
+                </button>
+
+                <!-- Community Student Button -->
+                <button class="relative group transform hover:-translate-y-1 transition-all duration-300 mx-2">
+                    <div class="absolute inset-0 bg-[#8B0000] transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300
+                                shadow-lg group-hover:shadow-[#8B0000]/50 border-2 border-[#8B0000]/30"></div>
+                    <span class="relative px-10 py-4 inline-block font-['Black_Ops_One'] text-lg text-[#FFD700] 
+                                tracking-wider uppercase group-hover:scale-105 transition-transform duration-300
+                                whitespace-nowrap">
+                        Community Student
+                    </span>
+                </button>
+            </div>
+
+            <!-- Decorative Corner Elements -->
+            <div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#FFD700]/30"></div>
+            <div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-[#FFD700]/30"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#FFD700]/30"></div>
+            <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#FFD700]/30"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-transition relative py-20 bg-[#2C2A25]/80 border-t border-[#FFD700]/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider
+                           drop-shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+                    COMMUNICATION CHANNELS
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <!-- Social Icons Grid -->
+            <div class="flex justify-center items-center gap-12">
+                <a href="https://instagram.com/drive_dev" target="_blank" 
+                   class="social-icon-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/drivedev5/" target="_blank" 
+                   class="social-icon-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                
+                <a href="mailto:drivedev16@gmail.com" 
+                   class="social-icon-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

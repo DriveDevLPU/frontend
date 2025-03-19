@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Encrypted Warfare</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#2C2A25]">
+    <!-- Navigation Bar (Same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Logo" class="logo">
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="about.html" class="nav-item">About Us</a>
+                    <a href="event.html" class="nav-item">Event</a>
+                    <a href="sponsors.html" class="nav-item">Sponsors</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html" class="mobile-nav-item">About Us</a>
+            <a href="event.html" class="mobile-nav-item">Event</a>
+            <a href="sponsors.html" class="mobile-nav-item">Sponsors</a>
+        </div>
+    </nav>
+
+    <!-- Add JavaScript for mobile menu toggle -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- About Us Hero Section -->
+    <section class="relative min-h-screen pt-48 md:pt-52 pb-20 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[url('/images/vintage-paper.jpg')] bg-cover bg-center opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#2C2A25]/50 via-transparent to-[#2C2A25]/50"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider
+                           drop-shadow-[0_0_15px_rgba(139,0,0,0.5)] mb-6">
+                    Who We Are
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto"></div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Left Column - Main Content -->
+                <div class="space-y-8">
+                    <div class="mission-card fade-in">
+                        <h3 class="text-[#FFD700] font-['Black_Ops_One'] text-xl mb-6 tracking-wider">MISSION OVERVIEW</h3>
+                        <p>Drive Dev is a student-led tech club at <span class="highlight">Lovely Professional University</span> that fosters AI, robotics, and automobile innovation.</p>
+                        
+                        <p>Our mission is to create a collaborative space where students explore emerging technologies, develop technical skills, and connect with like-minded individuals.</p>
+                        
+                        <h3 class="text-[#FFD700] font-['Black_Ops_One'] text-xl my-6 tracking-wider">OPERATIONAL STRATEGY</h3>
+                        <p>We bridge the gap between academics and industry through:</p>
+                        <ul class="list-none space-y-2 ml-4 mb-6">
+                            <li class="flex items-center">
+                                <span class="text-[#FFD700] mr-2">▸</span>
+                                <span>Hackathons</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-[#FFD700] mr-2">▸</span>
+                                <span>Workshops</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-[#FFD700] mr-2">▸</span>
+                                <span>Seminars</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-[#FFD700] mr-2">▸</span>
+                                <span>Competitions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column - Additional Info -->
+                <div class="space-y-8">
+                    <div class="stats-card fade-in" style="animation-delay: 0.2s;">
+                        <h3 class="text-[#FFD700] font-['Black_Ops_One'] text-xl mb-6 tracking-wider">CORE OBJECTIVES</h3>
+                        <p>We empower students to think creatively, solve real-world problems, and contribute to technological advancements.</p>
+                        
+                        <div class="my-6 border-l-2 border-[#FFD700]/30 pl-4">
+                            <p class="italic">Our club thrives on teamwork, innovation, and continuous learning, ensuring every member grows professionally and personally.</p>
+                        </div>
+
+                        <p>Whether you are a beginner or an expert, Drive Dev offers a platform to experiment, learn, and build impactful projects.</p>
+                        
+                        <div class="mt-8 pt-6 border-t border-[#FFD700]/10">
+                            <p class="text-[#FFD700] font-['Black_Ops_One'] text-lg tracking-wider">JOIN THE MISSION</p>
+                            <p class="mt-2">Be part of a thriving tech community shaping the future through knowledge, collaboration, and innovation.</p>
+                            
+                            <!-- New Website Button -->
+                            <div class="mt-6 text-center">
+                                <a href="https://drivedev5.framer.website/" target="_blank" class="website-btn">
+                                    <span class="btn-content">
+                                        <i class="fas fa-globe mr-2"></i>
+                                        Visit Drive Dev
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the existing Content Area div -->
+            <div class="vision-mission-container mt-20">
+                <!-- Vision Box -->
+                <div class="vision-box fade-in" style="animation-delay: 0.3s;">
+                    <div class="box-content">
+                        <div class="box-header">
+                            <i class="fas fa-eye"></i>
+                            <h3 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">VISION</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="vision-points">
+                                <p>Establish a strategic command center for tech innovation where elite student operatives lead covert operations in AI, robotics, and advanced automotive systems.</p>
+                                
+                                <p>Execute precision strikes on the gap between academic intelligence and field operations through tactical training missions and classified real-world deployments.</p>
+                                
+                                <p>Deploy next-generation tech commanders equipped with advanced problem-solving protocols and battle-hardened leadership capabilities for future warfare.</p>
+                            </div>
+                        </div>
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration top-right"></div>
+                        <div class="corner-decoration bottom-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+                    </div>
+                </div>
+
+                <!-- Mission Box -->
+                <div class="mission-box fade-in" style="animation-delay: 0.4s;">
+                    <div class="box-content">
+                        <div class="box-header">
+                            <i class="fas fa-crosshairs"></i>
+                            <h3 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">MISSION</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="mission-points">
+                                <p>Deploy cutting-edge hackathons, tactical workshops, and strategic seminars to equip our tech warriors with battle-tested expertise and hands-on combat experience.</p>
+                                
+                                <p>Establish an elite network of tech commandos, industry veterans, and innovation specialists to facilitate high-value intelligence sharing and strategic mentorship operations.</p>
+                                
+                                <p>Cultivate a dynamic ecosystem of perpetual innovation and advancement, empowering our operatives to make significant impacts in the tech battlefield.</p>
+                            </div>
+                        </div>
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration top-right"></div>
+                        <div class="corner-decoration bottom-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#FFD700]/30"></div>
+        <div class="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-[#FFD700]/30"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#FFD700]/30"></div>
+        <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#FFD700]/30"></div>
+    </section>
+</body>
+</html> 
