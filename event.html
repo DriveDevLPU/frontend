@@ -236,5 +236,42 @@
         <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#FFD700]/30"></div>
         <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#FFD700]/30"></div>
     </section>
+
+    <!-- Why Join Section -->
+    <section class="relative z-10 max-w-6xl mx-auto px-6 mt-32 mb-20">
+        <!-- Section Title -->
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider
+                       drop-shadow-[0_0_15px_rgba(139,0,0,0.5)] mb-8">
+                WHY JOIN THE BATTLE?
+            </h2>
+            <div class="w-40 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <style>
+        .perk-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .perk-card:nth-child(1) { animation-delay: 0.1s; }
+        .perk-card:nth-child(2) { animation-delay: 0.2s; }
+        .perk-card:nth-child(3) { animation-delay: 0.3s; }
+        .perk-card:nth-child(4) { animation-delay: 0.4s; }
+        .perk-card:nth-child(5) { animation-delay: 0.5s; }
+        .perk-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
 </html> 

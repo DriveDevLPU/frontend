@@ -1802,3 +1802,150 @@ nav a:hover::after {
         margin-left: 6px;
     }
 }
+
+/* Base responsive styles */
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
+
+    /* Container padding */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Navbar adjustments */
+    .navbar {
+        height: 80px;
+    }
+
+    .nav-content {
+        height: 80px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    /* Section spacing */
+    section {
+        padding-top: 100px !important;
+    }
+
+    /* Card adjustments */
+    .mission-card,
+    .stats-card,
+    .vision-box,
+    .mission-box {
+        padding: 1.5rem;
+    }
+
+    .box-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .box-body p {
+        padding-left: 0;
+    }
+
+    /* Grid adjustments */
+    .vision-mission-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    /* Corner decorations */
+    .corner-decoration {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Timeline adjustments */
+    .time-block {
+        flex: 0 0 auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .event-block {
+        padding-left: 1rem;
+    }
+}
+
+/* Tablet responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vision-mission-container {
+        gap: 2rem;
+    }
+
+    section {
+        padding-top: 120px;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .box-header i {
+        font-size: 1.75rem;
+    }
+
+    .sponsor-card {
+        height: 150px;
+    }
+
+    .sponsor-logo {
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    .mobile-menu-button {
+        padding: 0.25rem;
+    }
+
+    .mobile-nav-item {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .sponsor-card:hover {
+        transform: none;
+    }
+
+    .nav-item:hover {
+        transform: none;
+    }
+
+    .mission-card:hover,
+    .vision-box:hover,
+    .mission-box:hover {
+        transform: none;
+    }
+}
