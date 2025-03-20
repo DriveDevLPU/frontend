@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules & Regulations - Encrypted Warfare</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#2C2A25]">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Logo" class="logo">
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="about.html" class="nav-item">About Us</a>
+                    <a href="event.html" class="nav-item">Event</a>
+                    <a href="rules.html" class="nav-item">Rules</a>
+                    <a href="sponsors.html" class="nav-item">Sponsors</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html" class="mobile-nav-item">About Us</a>
+            <a href="event.html" class="mobile-nav-item">Event</a>
+            <a href="rules.html" class="mobile-nav-item">Rules</a>
+            <a href="sponsors.html" class="mobile-nav-item">Sponsors</a>
+        </div>
+    </nav>
+
+    <!-- Add JavaScript for mobile menu toggle -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- After the nav section -->
+    <section class="relative min-h-screen pt-48 md:pt-52 pb-20 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[#2C2A25] opacity-90"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider mb-6">
+                    STANDARD OPERATING PROCEDURES
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto"></div>
+            </div>
+
+            <!-- Eligibility Card -->
+            <div class="mission-card fade-in">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-user-check text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">ELIGIBILITY CRITERIA</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-8">
+                        <ul class="space-y-4 text-white list-none">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>Anyone with an interest in cybersecurity, ethical hacking, and Capture the Flag (CTF) competitions is eligible to participate.</span>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>Teams must consist of 1-4 members (team members can be from different institutions or backgrounds).</span>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>All team members must be college students. No working professionals are allowed strictly.</span>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>Participants must have basic knowledge of cybersecurity, ethical hacking, and CTF competitions.</span>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>Each participant must provide a valid ID (government-issued ID, college/work ID, or any official identification) card during registration and check-in. Bring Aadhar Card, Pan Card, Driving License, Voter ID, or any other valid ID and 2 passport size photos with signature on the back.</span>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-4"></i>
+                                <span>All participants must agree to the event's code of conduct and fair play policies.</span>
+                            </li>
+
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Process Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-clipboard-list text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">REGISTRATION PROCESS</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Upon successful registration, teams will receive a confirmation email with event details.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Participants must register through the official event platform (link will be provided separately)</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <div class="flex-1">
+                                    <span>Each team must submit : Team Name, Full Name, Contact Number, and valid ID proof of all members</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Registration Process Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-tasks text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">TRIAL AND SELECTION PROCESS</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">There is no selection process—all registered teams are automatically eligible to participate in the event.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Once registered, teams will receive detailed event instructions and schedules.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Participants should ensure that they meet the eligibility criteria before registering.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Teams must confirm their participation via email upon receiving the confirmation mail.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Trial and Selection Process Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-gavel text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">CODE OF CONDUCT</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Respect all event staff, judges, and fellow participants.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">No cheating or unfair play—any form of plagiarism, unethical hacking, or collusion will lead to immediate disqualification.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">No disruption of event infrastructure—attempts to attack event servers or manipulate scoring systems will result in removal.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Professional behavior is expected—harassment, discrimination, or offensive conduct will lead to legal consequences.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Code of Conduct Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-trophy text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">PRIZES AND RECOGNITION</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Top 3 winning teams will receive : Trophies, and 4+ certificates</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Premium platform subscriptions</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Free .xyz domains</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Recognition in LPU newsletters, social media, and event publications.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Additional awards include : Best Strategy Award, Fastest Solver Award</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Prizes and Recognition Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-bus text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">TRANSPORTATION AND ACCOMMODATION</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Participants must arrange their own transportation to LPU, Grand Trunk Rd, Phagwara Jalandhar, Punjab -144411</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Limited on-campus accommodation is available on a first-come, first-served basis.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Organizers will provide a list of nearby hotels and hostels for external lodging.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Shuttle services might be arranged between accommodation and the event venue.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Transportation and Accommodation Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-file-contract text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">TERMS AND CONDITIONS</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">By registering, participants agree to comply with all event rules.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Organizers hold the right to modify rules, schedules, and prizes if necessary.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">LPU is not responsible for personal belongings, injuries, or losses during the event.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Any attempt at malicious hacking or unethical conduct will lead to legal consequences if necessary.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Terms and Conditions Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-clipboard-check text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">EVENT GUIDELINES</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Arrival & Check-in : Participants must report to the registration desk at LPU, Jalandhar by March 26, 2025, 09:00 AM.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Equipment : Participants must bring their own laptops and necessary software.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Fair Play : Sharing flags or solutions outside the team is strictly prohibited.</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Emergency Protocol : In case of any issue, contact event support immediately.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add this after the Event Guidelines Card -->
+            <div class="mission-card fade-in mt-20">
+                <div class="box-content">
+                    <div class="box-header">
+                        <i class="fas fa-users text-[#FFD700] text-3xl"></i>
+                        <h2 class="text-[#FFD700] font-['Black_Ops_One'] text-2xl tracking-wider">TENTATIVE PARTICIPATING COMMUNITIES</h2>
+                    </div>
+                    
+                    <div class="corner-decoration top-left"></div>
+                    <div class="corner-decoration top-right"></div>
+                    <div class="corner-decoration bottom-left"></div>
+                    <div class="corner-decoration bottom-right"></div>
+
+                    <div class="box-body p-12">
+                        <ul class="space-y-8 text-white list-none grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">LPU, Jalandhar</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">IITs & NITs Cybersecurity Clubs</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Delhi University Cyber Clubs</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">GDG Jalandhar</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">GDG Ludhiana</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">BITS Pilani Tech Groups</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Various Schools & Colleges with Cybersecurity Programs</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Independent cybersecurity enthusiasts</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Tech clubs and hacker communities from various institutions</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">IITs, NITs, and other engineering college cybersecurity clubs</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">University students and professionals interested in ethical hacking</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">DAV University</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">SVIET University</span>
+                            </li>
+                            
+                            <li class="flex items-start group">
+                                <i class="fas fa-chevron-right text-[#FFD700] mt-1.5 mr-6"></i>
+                                <span class="flex-1">Open Source Chandigarh</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update the footer div -->
+    <div class="text-center mt-12 mb-20">
+        <h3 class="text-5xl md:text-4xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider">
+            Let the best cyber warriors claim victory!
+        </h3>
+        <div class="w-48 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent mx-auto mt-6"></div>
+    </div>
+</body>
+</html> 
