@@ -249,21 +249,69 @@
 
         /* Mobile menu button positioning */
         .mobile-menu-button {
-            position: relative;
-            right: 10px;
-            padding: 8px;
+            display: none;
             color: #FFD700;
+            padding: 8px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
         }
 
         @media (max-width: 768px) {
             .nav-content {
-                padding-right: 1rem;
+                justify-content: center;
+                padding: 0 1rem;
             }
-            
+
             .mobile-menu-button {
-                right: 0;
-                margin-right: 8px;
+                display: block;
+                position: absolute;
+                left: auto;
+                right: 25%;
+                transform: none;
             }
+
+            .logo-container {
+                position: absolute;
+                left: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu-button {
+                right: 20%;
+            }
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        /* Mobile note visibility */
+        .mobile-note {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-note {
+                display: block;
+                animation: fadeIn 0.8s ease-in-out;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -420,6 +468,21 @@
                     </span>
                     <div class="absolute inset-0 h-[1px] w-full bg-[#FFD700]/20 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </a>
+            </div>
+
+           
+    </section>
+
+    <!-- Add this new section between Hero and Communication sections -->
+    <section class="relative py-16 bg-[#2C2A25]/90 border-y border-[#FFD700]/20">
+        <div class="mobile-note max-w-6xl mx-auto px-6">
+            <div class="bg-[#8B0000]/20 border-2 border-[#FFD700]/30 rounded-lg p-8 max-w-2xl mx-auto backdrop-blur-sm">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                 
+                </div>
+                <p class="text-[#FFD700] text-center text-lg font-sans leading-relaxed">
+                    For optimal tactical advantage and seamless mission execution, we recommend switching to the desktop view.
+                </p>
             </div>
         </div>
     </section>
