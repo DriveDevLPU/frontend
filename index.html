@@ -246,6 +246,25 @@
                 padding-right: 1rem;
             }
         }
+
+        /* Mobile menu button positioning */
+        .mobile-menu-button {
+            position: relative;
+            right: 10px;
+            padding: 8px;
+            color: #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                padding-right: 1rem;
+            }
+            
+            .mobile-menu-button {
+                right: 0;
+                margin-right: 8px;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#2C2A25]">
@@ -269,7 +288,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-button mr-4" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
