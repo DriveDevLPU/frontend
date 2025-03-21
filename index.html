@@ -151,7 +151,7 @@
 
         /* Mobile menu styles */
         .mobile-menu {
-            display: none;
+            display: none; 
             position: absolute;
             top: 80px;
             left: 0;
@@ -375,13 +375,25 @@
             <div class="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-[#FFD700]/30"></div>
             <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#FFD700]/30"></div>
 
-            <!-- Update the download button with proper icon spacing -->
-            <div class="flex justify-center mt-8">
+            <!-- Update the download button with more icon spacing -->
+            <div class="flex justify-center gap-12 mt-8">
+                <!-- Download Button -->
                 <a href="assets/SOP.pdf" download class="download-btn group relative inline-flex items-center px-16 py-6 border-2 border-[#FFD700] bg-transparent hover:bg-[#FFD700]/10 transition-all duration-300">
                     <span class="relative z-10 flex items-center text-[#FFD700] group-hover:text-white transition-colors duration-300">
                         <i class="fas fa-download text-2xl"></i>
-                        <span class="font-semibold tracking-wide text-x2 px-4 ml-12">
+                        <span class="font-semibold tracking-wide text-x2 px-4 ml-16">
                             Download Mission Brief
+                        </span>
+                    </span>
+                    <div class="absolute inset-0 h-[1px] w-full bg-[#FFD700]/20 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </a>
+
+                <!-- Event Button -->
+                <a href="event.html" class="event-btn group relative inline-flex items-center px-16 py-6 border-2 border-[#FFD700] bg-transparent hover:bg-[#FFD700]/10 transition-all duration-300">
+                    <span class="relative z-10 flex items-center text-[#FFD700] group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                        <span class="font-semibold tracking-wide text-x2 px-4 ml-16">
+                            Event Details
                         </span>
                     </span>
                     <div class="absolute inset-0 h-[1px] w-full bg-[#FFD700]/20 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
