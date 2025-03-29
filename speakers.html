@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="192x192">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers - Encrypted Warfare</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#2C2A25]">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Logo" class="logo">
+                    </a>
+                </div>
+
+                <div class="nav-links">
+                    <a href="about.html" class="nav-item">About Us</a>
+                    <a href="event.html" class="nav-item">Event</a>
+                    <a href="rules.html" class="nav-item">Rules</a>
+                    <a href="speakers.html" class="nav-item">Speakers</a>
+                    <a href="sponsors.html" class="nav-item">Sponsors</a>
+                </div>
+
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html" class="mobile-nav-item">About Us</a>
+            <a href="event.html" class="mobile-nav-item">Event</a>
+            <a href="rules.html" class="mobile-nav-item">Rules</a>
+            <a href="speakers.html" class="mobile-nav-item">Speakers</a>
+            <a href="sponsors.html" class="mobile-nav-item">Sponsors</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-48 md:pt-52 pb-20 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[#2C2A25] opacity-90"></div>
+            <div class="grid-overlay"></div>
+            <div class="circuit-pattern"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-20">
+                <h1 class="text-5xl md:text-7xl font-['Black_Ops_One'] text-[#FFD700] tracking-wider mb-6">
+                    OUR SPEAKERS
+                </h1>
+            </div>
+
+            <!-- Speakers Grid -->
+            <div class="speakers-container max-w-6xl mx-auto px-4 pb-32">
+                <!-- Speaker 1 -->
+                <div class="speaker-card">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <div class="speaker-image-container">
+                                <img src="assets/manas.jpeg" alt="Manas Chopra" class="speaker-image">
+                            </div>
+                            <div class="speaker-info">
+                                <h2 class="speaker-name">Manas Chopra</h2>
+                                <p class="speaker-title">Co-founder @Geek Room | AI/ML Expert | Hackathon Organizer & Speaker</p>
+                                <p class="speaker-intro">Co-founder of Geek Room with 100K+ developers, pioneering India's largest hackathons and tech initiatives. Dedicated leader combining technical expertise with a passion for empowering the next generation of coders.</p>
+                                <div class="speaker-social">
+                                    <a href="https://www.linkedin.com/in/themanas95826/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker-card">
+                    <div class="card-frame">
+                        <div class="card-content">
+                            <div class="speaker-image-container">
+                                <img src="assets/akshay.jpeg" alt="Akshay Kumar Sharma" class="speaker-image">
+                            </div>
+                            <div class="speaker-info">
+                                <h2 class="speaker-name">Akshay Kumar Sharma</h2>
+                                <p class="speaker-title">Founding Member @Geek Room | SWE @Misty | AWS & Azure Certified | Hackathon Mentor</p>
+                                <p class="speaker-intro">Tech innovator with a passion for hackathons and creative problem-solving. Constantly exploring new technologies and building solutions that push boundaries.</p>
+                                <div class="speaker-social">
+                                    <a href="https://www.linkedin.com/in/akshay-kumar-sharma-devvoyager/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255, 215, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .military-font {
+            font-family: 'Black Ops One', cursive;
+            letter-spacing: 0.2em;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .speakers-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .speaker-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .card-frame {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, #FFD700 0%, #8B0000 100%);
+            padding: 2px;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-content {
+            position: relative;
+            width: 100%;
+            background: #2C2A25;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            background: linear-gradient(135deg, 
+                rgba(60, 58, 53, 0.8) 0%,
+                rgba(44, 42, 37, 0.9) 40%,
+                rgba(50, 48, 43, 0.8) 60%,
+                rgba(44, 42, 37, 0.9) 100%
+            );
+            backdrop-filter: brightness(1.1) contrast(1.1);
+        }
+
+        .card-content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgIDxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjgiIG51bU9jdGF2ZXM9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz4KICA8L2ZpbHRlcj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjA1Ii8+Cjwvc3ZnPg==');
+            opacity: 0.1;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        .speaker-image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+        }
+
+        .speaker-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Add a subtle overlay effect */
+        .speaker-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.1) 0%, 
+                rgba(0,0,0,0.3) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .speaker-info {
+            padding: 1.5rem;
+            color: #E5E5E5;
+            text-align: center;
+            position: relative;
+        }
+
+        .speaker-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 215, 0, 0.3) 50%, 
+                transparent 100%);
+        }
+
+        .speaker-name {
+            font-family: 'Black Ops One', cursive;
+            font-size: 1.8rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .speaker-title {
+            font-size: 1rem;
+            color: #FFD700;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 15px;
+        }
+
+        .speaker-title::before, .speaker-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 15px;
+            height: 1px;
+            background-color: rgba(255, 215, 0, 0.4);
+        }
+
+        .speaker-title::before {
+            left: -10px;
+        }
+
+        .speaker-title::after {
+            right: -10px;
+        }
+        
+        .speaker-intro {
+            font-size: 0.9rem;
+            color: #E5E5E5;
+            line-height: 1.5;
+            margin: 0.75rem 0 1rem;
+            font-style: italic;
+            padding: 0 0.5rem;
+            position: relative;
+        }
+
+        .speaker-intro::before, .speaker-intro::after {
+            content: '"';
+            font-size: 1.5rem;
+            color: rgba(255, 215, 0, 0.3);
+            position: absolute;
+        }
+
+        .speaker-intro::before {
+            top: -5px;
+            left: 0;
+        }
+
+        .speaker-intro::after {
+            bottom: -15px;
+            right: 0;
+        }
+
+        .speaker-social {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .speaker-social::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 215, 0, 0.2) 50%, 
+                transparent 100%);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover::before {
+            opacity: 1;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .speaker-card:hover .card-frame {
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Enhance the hover effect */
+        .speaker-card:hover .speaker-image {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .speakers-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .speakers-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .speaker-name {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Subtle border glow */
+        @keyframes borderGlow {
+            0%, 100% {
+                border-color: rgba(255, 215, 0, 0.1);
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+            }
+            50% {
+                border-color: rgba(255, 215, 0, 0.3);
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+            }
+        }
+
+        .speaker-card:hover .card-content {
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+
+        /* Add a tech circuit pattern to the background */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxwYXR0ZXJuIGlkPSJjaXJjdWl0IiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHBhdGggZD0iTTAgMCBMNDAgNDAgTTQwIDAgTDAgNDAiIHN0cm9rZT0iI0ZGRDY5OSIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1Ii8+CiAgPC9wYXR0ZXJuPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjY2lyY3VpdCkiLz4KPC9zdmc+');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    </style>
+</body>
+</html> 
